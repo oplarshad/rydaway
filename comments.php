@@ -66,7 +66,8 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	$args = array('title_reply' => 'What are your thoughts?');
+	comment_form($args);
 	?>
 
 </div><!-- #comments -->
