@@ -1440,7 +1440,7 @@ object {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	max-width: 25%;
+	width: 25%;
 	height: 200px;
 	padding: 5%;
 	filter: opacity(0.9);
