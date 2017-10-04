@@ -25,25 +25,7 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-			$comment_count = get_comments_number();
-			if ( 1 === $comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'rydaway' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'rydaway' ) ),
-					number_format_i18n( $comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
+		<h2 class="comments-title">Comments</h2>
 
 		<?php the_comments_navigation(); ?>
 
@@ -52,6 +34,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'avatar_size' => 0,
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -60,13 +43,30 @@ if ( post_password_required() ) {
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'rydaway' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed. Sorry, eh?', 'rydaway' ); ?></p>
 		<?php
 		endif;
 
 	endif; // Check for have_comments().
 
-	$args = array('title_reply' => 'What are your thoughts?');
+
+	$fields =  array(
+
+  'author' =>
+    '<p class="comment-form-author"><label for="author">' . __( 'Your Name', 'domainreference' ) . '</label>&nbsp; ' .
+    ( $req ? '<span class="required">*</span>&nbsp;&nbsp;' : '' ) .
+    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+    '" size="30"' . $aria_req . ' /></p>',
+
+  'email' =>
+    '<p class="comment-form-email"><label for="email">' . __( 'Your Email', 'domainreference' ) . '</label>&nbsp; ' .
+    ( $req ? '<span class="required">*</span>&nbsp;&nbsp;' : '' ) .
+    '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+    '" size="30"' . $aria_req . ' /></p>',
+
+	);
+
+	$args = array('title_reply' => 'Hey, I want to know what you think!', 'fields' => apply_filters( 'comment_form_default_fields', $fields ));
 	comment_form($args);
 	?>
 
