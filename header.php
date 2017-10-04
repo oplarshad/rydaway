@@ -53,7 +53,8 @@
 				</div>
 				<div class="menu-container">
 					<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rydaway' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i>
+</button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
@@ -73,7 +74,7 @@
 ?>
 
 		<div class="header-image-container">
-			<div class="plane-image-container" style="background-image: url(<?php echo get_template_directory_uri() . "/img/plane.png"; ?>)"></div>
+			<div class="plane-image-container" style="background-image: url(<?php echo get_template_directory_uri() . "/img/plane_top.png"; ?>)"></div>
 			<div class="header-image" style="background-image: url(<?php echo $this_posts_thumbnail_url ?>);">
 			</div>
 			<div class="single-post-title-container">
