@@ -203,3 +203,17 @@ function wpb_track_post_views ($post_id) {
     wpb_set_post_views($post_id);
 }
 add_action( 'wp_head', 'wpb_track_post_views');
+
+
+// Limiting post excerpts
+function custom_excerpt_length( $length ) {
+	return 25;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// Changing that stupid square bracket thing to an elipsis
+
+function new_excerpt_more( $more ) {
+    return ' ...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
