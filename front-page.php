@@ -25,6 +25,7 @@
 
 	<header id="masthead" class="site-header" style="background: none !important;">
 		<div class="main-container-home">
+			
 		<div class="site-branding">
 			<div class="header-content">
 				<div class="logo-container">
@@ -34,7 +35,7 @@
 				</div>
 				<div class="menu-container">
 					<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rydaway' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
@@ -67,18 +68,53 @@
 		
 		</div>
 	</header><!-- #masthead -->
+	<div class="home-plane-container" style="background-image: url(<?php echo get_template_directory_uri() . "/img/plane.png"; ?>)"></div>
+	<div class="welcome-message">
+		<h1>Welcome <span class="welcome-dark">to</span> RYDAWAY.</h1>
+		<p>An online travel resource.</p>
+	</div>
 	
 <!-- 	<div class="notification-panel"><p>Hey! I'm currently doing some coding on my site. Please stick with me while it looks horribly ugly. - October 2, 2017, 6PM in Canada </p></div> -->
 
 	<div id="content" class="site-content">
+		<?php
+			
+			
+// Grab 12 of the latest posts at random
+	$catID = get_the_category();
+	$catID = $catID[0]->cat_ID;
+	
+	$args = array( 'numberposts' => 25, 'category' => $catID, ); // Get the latest from this category
+	$recent_posts_full_array = wp_get_recent_posts( $args );
+	$keys = array_rand($recent_posts_full_array, 12); // Pick out four entries from the inital array
+	
+	foreach ($keys as $key) {
 		
-		<h1>Welcome to RYDAWAY</h1>
-		<p>RYDAWAY is an online travel resource about a guy named Ryder, his adventures, and the people he meets along the way.</p>
+		$image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_posts_full_array[$key]["ID"]), 'large')[0];
+			if (!$image) {
+			   $image = get_template_directory_uri() . "/img/rydaway_logo_rast.png";
+		    }
+		    
+		    ?>
+		    
+		    <a href="<?php echo get_permalink($recent_posts_full_array[$key]["ID"]); ?>" rel="bookmark" title="Link to <?php echo $recent_posts_full_array[$key]["post_title"];?>">
+
+		    <div class="related-post" style="background-image: url( <?php echo $image; ?> )">
+						<h3 class="related-post-txt"><?php echo $recent_posts_full_array[$key]["post_title"]; ?></h3>
+					</div>
+				</a>
+		    
+		    <?php
 		
-		<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+	}
+	wp_reset_query();
+			
+			
+			
+			?>
 		
-		<h1>Instagram</h1>
 		
+				
 		<?php
 			
 			get_footer();
