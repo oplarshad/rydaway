@@ -15,21 +15,25 @@
 
 	<footer id="colophon" class="site-footer">
 		
-		<div class="footer-container" style="background-image: url(<?php echo get_template_directory_uri() . "/img/plane.png"; ?>);">
+		<div class="footer-container" style="background-image: url(<?php echo get_template_directory_uri() . "/img/plane_ud.png"; ?>);">
 			
 			<div class="footer-site-info">
 				<h2>&copy; RYDAWAY <?php echo date('Y'); ?></h2>
 				<div class="footer-title-underline"></div>
 				<p>RYDAWAY is an online travel resource about a guy named Ryder, his adventures, and the people he meets along the way.</p>
 				
-				<a href="https://github.com/ryderdamen" target="_blank"><i class="fa fa-wordpress" aria-hidden="true"></i> This site runs on a home-built, open-source WordPress theme</a>
+				<a href="https://github.com/ryderdamen/rydaway" target="_blank"><i class="fa fa-wordpress" aria-hidden="true"></i> This site runs on a home-built, open-source WordPress theme</a>
 			</div>
 			
 			<div class="footer-contact-info">
 				<h2>Contact Info</h2>
 				<div class="footer-title-underline"></div>
 				<a href="https://instagram.com/rydaway" target="_blank"> <i class="fa fa-instagram social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Follow me on instagram</a> <br>
-				<a href="https://rydaway.com/about" target="_blank"> <i class="fa fa-envelope-o social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Send me a message</a>
+				
+				
+				<a href='m&#97;ilto&#58;r%79der%&#52;0ryd&#97;w&#97;y&#46;c%&#54;F&#109;'> <i class="fa fa-envelope-o social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Send me a message</a> <br>
+				<a href="https://twitter.com/rydamen" target="_blank"> <i class="fa fa-twitter social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Follow me on Twitter</a> <br>
+				<a href="http://ryderdamen.com/" target="_blank"> <i class="fa fa-rocket social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Check out my main site</a> <br>
 										
 			</div>
 			
