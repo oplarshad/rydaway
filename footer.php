@@ -28,7 +28,7 @@
 			<div class="footer-contact-info">
 				<h2>Contact Info</h2>
 				<div class="footer-title-underline"></div>
-				<a href="https://instagram.com/rydaway" target="_blank"> <i class="fa fa-instagram social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Follow me on instagram</a> <br>
+				<a href="https://instagram.com/rydaway" target="_blank"> <i class="fa fa-instagram social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Follow me on Instagram</a> <br>
 				
 				
 				<a href='m&#97;ilto&#58;r%79der%&#52;0ryd&#97;w&#97;y&#46;c%&#54;F&#109;'> <i class="fa fa-envelope-o social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Send me a message</a> <br>

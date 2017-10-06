@@ -8,12 +8,11 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: rydaway
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, ryder, rydaway
 
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
 
-rydaway is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+RYDAWAY is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -53,6 +52,8 @@ html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+	background-color: #1a348b;
+	
 }
 
 body {
@@ -1045,9 +1046,140 @@ object {
 }
 
 
+
+
+
+
+
 /*--------------------------------------------------------------
-# FOOTER
+# Site Navigation and Top Bar
 --------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Header Image
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Front Page
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Site Main Content
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Related Posts
+--------------------------------------------------------------*/
+
+
+.related-posts {
+	margin: 0;
+	padding: 0;
+	background: #f8f8f8;
+}
+
+.related-post {
+	float: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 25%;
+	height: 200px;
+	padding: 5%;
+	filter: opacity(0.9);
+}
+
+.related-post:hover {
+	filter: opacity(1);
+}
+
+.related-post-txt {
+	background-color: #222;
+	color: #fff;
+	font-size: 12px;
+	padding: 10px;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Archive Main Content
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Menu and Nav
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Mobile Overrides
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+
+
+	/* 	Related Posts */
+
+	.related-post {
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	.related-post-txt {
+		text-align: center;
+	}
+	
+	/* 	Home Page */
+	
+	.logo-container h1 {
+		padding: 0;
+		margin: 0;
+		font-size: 18px;
+	}
+	
+	#masthead {
+		height: 100vh;
+	}
+	
+	/* 	Menu Navigation */
+	
+	#site-navigation button {
+		background: transparent;
+	}
+	
+	.main-navigation li {
+		float: none;
+		width: 100%;
+		text-align: center;
+		font-size: 20px;
+	}
+	
+	
+	.menu-rys-custom-menu-container{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.menu-container {
+		float: none;
+	}
+	
+	.logo-container {
+		width: 100%;
+		text-align: center;
+	}
+
+}
+
+
+
 
 .footer-container {
 	padding-left: 5%;
@@ -1229,13 +1361,20 @@ object {
 /* Home Page Attributes */
 
 
+
+
 .main-container-home {
 	background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	height: 100vh;
+	display: inline-block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
 }
+
 
 
 .home-plane-container {
@@ -1260,6 +1399,23 @@ object {
 	width: 300px;
 	left: 40%;
 	top: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+
+	.welcome-message {
+		font-size: 1em;
+		line-height: 1.5em;
+		width: auto;
+	}
+	
+	.home-plane-container {
+	background-size: 100px;
+	height: 100vh;
+	left: 3%;
+	}
+	
+	
 }
 
 .welcome-dark {
@@ -1351,6 +1507,14 @@ object {
 	font-weight: 300;
 }
 
+.comment-author a {
+	text-transform: uppercase;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color: #fff;
+	text-decoration: none;
+}
+
 .comment-metadata a {
 	text-transform: uppercase;
 	font-family: 'Roboto', sans-serif;
@@ -1428,41 +1592,4 @@ object {
 
 
 
-/* Related Posts (on single page) */
-.related-posts {
-	margin: 0;
-	padding: 0;
-	background: #f8f8f8;
-}
-
-.related-post {
-	float: left;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	width: 25%;
-	height: 200px;
-	padding: 5%;
-	filter: opacity(0.9);
-}
-
-@media only screen and (max-width: 768px) {
-
-	.related-post {
-		width: 100%;
-		max-width: 100%;
-	}
-
-}
-
-.related-post:hover {
-	filter: opacity(1);
-}
-
-.related-post-txt {
-	background-color: #222;
-	color: #fff;
-	font-size: 12px;
-	padding: 10px;
-}
 
