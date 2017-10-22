@@ -930,9 +930,12 @@ object {
 	padding-right: 3%;
 }
 
+/* NB: This is all messed up to be able to apply multiple filters */
+
 .header-image-container {
 	background-color: #222;
 	overflow: hidden;
+	height: 400px;
 }
 
 .plane-image-container {
@@ -973,8 +976,6 @@ object {
 	background-position: center center;
 	position: relative;
 	background-attachment: fixed;
-
-	
 	filter: opacity(0.3) grayscale(0.1) contrast(1.5);
 }
 
@@ -1582,6 +1583,17 @@ object {
 #submit:hover {
 	background-color: #fff;
 	color: #222;
+}
+
+.plane-top {
+	height: 100px;
+	position: relative;
+	background: transparent;
+	margin-top: -150px;
+	bottom: 25px;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	filter: opacity(-0.3) grayscale(0.9) contrast(-1.5);
 }
 
 

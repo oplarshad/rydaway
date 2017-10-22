@@ -41,56 +41,63 @@
 <body <?php body_class(); ?>>
 	
 	
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rydaway' ); ?></a>
+<!-- 	Header Refactor -->
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<div class="header-content">
-				<div class="logo-container">
-					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					</h1>
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rydaway' ); ?></a>
+		<header id="masthead" class="site-header">
+			
+			<!--Navigation -->
+			<div class="site-branding">
+				<div class="header-content">
+					<div class="logo-container">
+						<h1 class="site-title">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+						</h1>
+					</div>
+					<div class="menu-container">
+						<nav id="site-navigation" class="main-navigation">
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</button>
+							<?php
+								wp_nav_menu( array('theme_location' => 'menu-1', 'menu_id'        => 'primary-menu',) );
+							?>
+						</nav>
+					</div>
 				</div>
-				<div class="menu-container">
-					<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i>
-</button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
+			</div>
+			
+			<!-- The Featured Image and Title -->
+					
+			<?php if ( is_single() ) : 
+					if ( has_post_thumbnail() ) :
+						$this_posts_thumbnail_url = get_the_post_thumbnail_url();
+						$this_posts_title = get_the_title();
 			?>
-		</nav>
+
+			<div class="header-image-container">
+					<div class="header-image" style="background-image: url(<?php echo $this_posts_thumbnail_url ?>);">
 				</div>
+				<img class="plane-top" src="<?php echo get_template_directory_uri() . "/img/plane_top.png"; ?>">
+				<div class="single-post-title-container">
+						<h1><?php echo $this_posts_title ?></h1>
+				</div>
+<!-- 				<div class="plane-image-container" style="background-image: url(<?php echo get_template_directory_uri() . "/img/plane_top.png"; ?>)"></div> -->
 			</div>
-		</div>
-
-		
-<?php if ( is_single() ) : 
-		if ( has_post_thumbnail() ) :
-			$this_posts_thumbnail_url = get_the_post_thumbnail_url();
-			$this_posts_title = get_the_title();
-?>
-
-		<div class="header-image-container">
-			<div class="plane-image-container" style="background-image: url(<?php echo get_template_directory_uri() . "/img/plane_top.png"; ?>)"></div>
-			<div class="header-image" style="background-image: url(<?php echo $this_posts_thumbnail_url ?>);">
-			</div>
-			<div class="single-post-title-container">
-					<h1><?php echo $this_posts_title ?></h1>
-			</div>
-		</div>
-		<?php endif; // Else, no header. ?>
+			<?php endif; // Else, no header. ?>
 
 		
 <?php endif; ?>
 		
 		
 		
-	</header><!-- #masthead -->
-	
-<!-- 	<div class="notification-panel"><p>Hey! I'm currently doing some coding on my site. Please stick with me while it looks horribly ugly. - October 2, 2017, 6PM in Canada </p></div> -->
+		</header><!-- #masthead -->
+		<div id="content" class="site-content"> <!-- Begin the main content -->
 
-	<div id="content" class="site-content">
+
+
+
+<!-- Header Refactor Ends -->
+	
+	
