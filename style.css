@@ -1320,6 +1320,10 @@ object {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
+.archived-post-container:hover {
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
 .archived-post-image-container {
 	float: left;
 	width: 30%;
@@ -1414,6 +1418,20 @@ object {
 	background-size: 100px;
 	height: 100vh;
 	left: 3%;
+	}
+	
+	.archived-post-image-container {
+		float: none;
+		width: 100%;
+		min-height: 100px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	
+	}
+	
+	.archived-post-content-container {
+		width: 100%;
 	}
 	
 	
