@@ -23,7 +23,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rydaway' ); ?></a>
 
-	<header id="masthead" class="site-header" style="background: none !important;">
+	<header id="masthead" class="site-header" >
 		<div class="main-container-home">
 			
 		<div class="site-branding">
