@@ -33,7 +33,7 @@
 				
 				<a href='m&#97;ilto&#58;r%79der%&#52;0ryd&#97;w&#97;y&#46;c%&#54;F&#109;'> <i class="fa fa-envelope-o social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Send me a message</a> <br>
 				<a href="https://twitter.com/rydamen" target="_blank"> <i class="fa fa-twitter social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Follow me on Twitter</a> <br>
-				<a href="http://ryderdamen.com/" target="_blank"> <i class="fa fa-rocket social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Check out my main site</a> <br>
+				<a href="http://ryderdamen.com/" target="_blank"> <i class="icon-r-logo social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Check out my main site</a> <br>
 										
 			</div>
 			
