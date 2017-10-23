@@ -531,21 +531,21 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
+.main-site-navigation {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
 }
 
-.main-navigation ul {
-	display: none;
+.main-site-navigation ul {
+	display: block;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
 
-.main-navigation ul ul {
+.main-site-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
@@ -558,26 +558,26 @@ a:hover, a:active {
 	color: #222;
 }
 
-.main-navigation ul ul ul {
+.main-site-navigation ul ul ul {
 	left: -999em;
 	top: 0;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-site-navigation ul ul li:hover > ul,
+.main-site-navigation ul ul li.focus > ul {
 	left: 100%;
 }
 
-.main-navigation ul ul a {
+.main-site-navigation ul ul a {
 	width: 200px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.main-site-navigation ul li:hover > ul,
+.main-site-navigation ul li.focus > ul {
 	left: auto;
 }
 
-.main-navigation li {
+.main-site-navigation li {
 	float: left;
 	position: relative;
 	padding-left: 8px;
@@ -585,43 +585,72 @@ a:hover, a:active {
 	font-size: 14px;
 }
 
-.main-navigation li:hover {
+.main-site-navigation li:hover {
 }
 
-.main-navigation a {
+.main-site-navigation a {
 	display: block;
 	text-decoration: none;
 	color: #222;
 }
 
-.main-navigation ul ul a {
+.main-site-navigation ul ul a {
 	color: #909090;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
-.main-navigation ul ul :hover {
+.main-site-navigation ul ul :hover {
 	color: #000;
 }
 
 
-.main-navigation a:hover {
+.main-site-navigation a:hover {
 	color: #222;
 }
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
+.main-site-navigation.toggled ul {
 	display: block;
 	background-color: #fff;
 	color: #000;
 }
 
+
+@media only screen and (max-width: 768px) {
+	
+/* 	This is fucking messy */
+	
+	.main-site-navigation ul ul {
+		display: none;
+	}
+	
+	.main-site-navigation ul ul ul {
+		display: none;
+	}
+	
+	.header-image-container {
+		display: block;
+		width: 100%;
+		
+	}
+	
+	.site-branding {
+		margin-bottom: 100px;
+	}
+
+
+	
+}
+
+
+
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
 		display: none;
 	}
-	.main-navigation ul {
+	.main-site-navigation ul {
 		display: block !important;
 	}
 	
@@ -939,6 +968,7 @@ object {
 	background-color: #222;
 	overflow: hidden;
 	height: 400px;
+	position: relative;
 }
 
 .plane-image-container {
@@ -1158,7 +1188,7 @@ object {
 		background: transparent;
 	}
 	
-	.main-navigation li {
+	.main-site-navigation li {
 		float: none;
 		width: 100%;
 		text-align: center;

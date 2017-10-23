@@ -58,7 +58,7 @@
 						</h1>
 					</div>
 					<div class="menu-container">
-						<nav id="site-navigation" class="main-navigation">
+						<nav class="main-site-navigation">
 <!--
 							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 								<i class="fa fa-bars" aria-hidden="true"></i>
