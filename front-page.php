@@ -12,6 +12,23 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!--
+
+                                |                                             
+                                 |                                             
+   ______________________________|_______________________________              
+                       ----\--||___||--/----                                   
+                            \ :==^==: /                                        
+                             \|  o  |/                                         
+                              \_____/                                          
+                              /  |  \                                          
+                            ^/   ^   \^                                        
+                            U    U    U                               
+                              RYDAWAY               
+
+
+ Hello there, I built this custom WordPress theme with the "_s" barebones template                                                                
+-->
 
 	<?php wp_head(); ?>
 </head>
@@ -34,14 +51,13 @@
 					</h1>
 				</div>
 				<div class="menu-container">
-					
-					<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-				</div>
+						<nav class="main-site-navigation">
+
+							<?php
+								wp_nav_menu( array('theme_location' => 'menu-1', 'menu_id'        => 'primary-menu',) );
+							?>
+						</nav>
+					</div>
 			</div>
 		</div>
 
