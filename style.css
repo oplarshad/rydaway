@@ -622,7 +622,10 @@ a:hover, a:active {
 		display: none;
 	}
 	.main-navigation ul {
-		display: block;
+		display: block !important;
+	}
+	
+	#primary-menu {
 	}
 }
 
@@ -1432,6 +1435,21 @@ object {
 	
 	.archived-post-content-container {
 		width: 100%;
+	}
+	
+	#masthead {
+		height: auto;
+	}
+	
+	.menu-toggle {
+		margin: auto;
+		background: #fff !important;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		width: 50%;
+		height 50px;
+		margin-top: 10px;
 	}
 	
 	

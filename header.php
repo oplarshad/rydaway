@@ -10,20 +10,6 @@
  */
 
 ?>
-<!--
- ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
-▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
-▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌
-▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌       ▐░▌
-▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌
-▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
-▐░█▀▀▀▀█░█▀▀  ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀ 
-▐░▌     ▐░▌       ▐░▌     ▐░▌       ▐░▌▐░▌          ▐░▌     ▐░▌  
-▐░▌      ▐░▌      ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌      ▐░▌ 
-▐░▌       ▐░▌     ▐░▌     ▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░▌       ▐░▌
- ▀         ▀       ▀       ▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀ 
- Hello there, I built this custom WordPress theme with the "_s" barebones template                                                                
--->
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -33,16 +19,32 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/r-logo-font/styles.css">
 	<script src="<?php echo get_template_directory_uri(); ?>/js/pace.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	
+	<!--
+
+                                |                                             
+                                 |                                             
+   ______________________________|_______________________________              
+                       ----\--||___||--/----                                   
+                            \ :==^==: /                                        
+                             \|  o  |/                                         
+                              \_____/                                          
+                              /  |  \                                          
+                            ^/   ^   \^                                        
+                            U    U    U                               
+                              RYDAWAY               
+
+
+ Hello there, I built this custom WordPress theme with the "_s" barebones template                                                                
+-->
 
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	
-	
-<!-- 	Header Refactor -->
-
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rydaway' ); ?></a>
 		<header id="masthead" class="site-header">
@@ -57,9 +59,11 @@
 					</div>
 					<div class="menu-container">
 						<nav id="site-navigation" class="main-navigation">
+<!--
 							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 								<i class="fa fa-bars" aria-hidden="true"></i>
 							</button>
+-->
 							<?php
 								wp_nav_menu( array('theme_location' => 'menu-1', 'menu_id'        => 'primary-menu',) );
 							?>
@@ -68,8 +72,7 @@
 				</div>
 			</div>
 			
-			<!-- The Featured Image and Title -->
-					
+			<!-- The Featured Image and Title -->	
 			<?php if ( is_single() ) : 
 					if ( has_post_thumbnail() ) :
 						$this_posts_thumbnail_url = get_the_post_thumbnail_url();
@@ -83,14 +86,10 @@
 				<div class="single-post-title-container">
 						<h1><?php echo $this_posts_title ?></h1>
 				</div>
-<!-- 				<div class="plane-image-container" style="background-image: url(<?php echo get_template_directory_uri() . "/img/plane_top.png"; ?>)"></div> -->
 			</div>
 			<?php endif; // Else, no header. ?>
 
-		
 <?php endif; ?>
-		
-		
 		
 		</header><!-- #masthead -->
 		<div id="content" class="site-content"> <!-- Begin the main content -->
@@ -98,6 +97,5 @@
 
 
 
-<!-- Header Refactor Ends -->
 	
 	
