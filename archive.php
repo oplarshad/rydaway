@@ -62,7 +62,7 @@ while ( have_posts() ) : the_post();
     </a>
     
     
-    <?
+    <?php
 endwhile;
 $args = array('prev_text' => 'Older Posts', 'next_text' => 'Newer Posts');
 ?> <div class="posts-navigation"> <?php echo get_the_posts_navigation( $args ); ?> </div> <?php 
