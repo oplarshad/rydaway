@@ -7,6 +7,62 @@
  * @package rydaway
  */
 
+// old bg image https://c1.staticflickr.com/8/7560/26801245133_936b8fddd4_k.jpg
+
+// Get Page URL
+$rydaway_pageUrl = $_SERVER['REQUEST_URI'];
+$rydaway_backgroundImageUrl = get_template_directory_uri() . '/error-pages-includes/background' . mt_rand(1, 3) . '.jpg';
+
+get_header(); ?>
+
+
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/error-pages-includes/main.css" type="text/css">
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script>
+	  $(function(){
+	  	var bgimage = new Image();      
+	  	bgimage.src="<?php echo $rydaway_backgroundImageUrl; ?>";       
+	  	$(".bg-img").hide();
+	  	$(bgimage).load(function(){
+	  		$(".bg-img").css("background-image","url("+$(this).attr("src")+")").fadeIn(2000);                  
+    	});
+	});
+  </script>
+  <body>
+	  <div class="bg-img"></div>
+	  <div class="container">
+		  <a href="<?php echo site_url(); ?>">
+		  <div class="inner">
+			  <span class="error-code"><p>ERROR 404</p></span>
+			  <p class="url-text">
+				  <?php 
+					  echo site_url() . $rydaway_pageUrl;
+				  ?>
+			  </p>
+			  <h1>You might be lost... Sorry eh?</h1>
+			  <p class="small-text">...but don't worry, getting lost makes for a good story.</p>
+		  </div>
+	  </div></a>
+  </body>
+</html>
+
+
+
+<?php
+
+//get_footer();
+
+
+
+
+
+
+
+/*
+
+Old 404
+
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -43,7 +99,6 @@ get_header(); ?>
 
 					<?php
 
-						/* translators: %1$s: smiley */
 						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'rydaway' ), convert_smilies( ':)' ) ) . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
@@ -58,3 +113,4 @@ get_header(); ?>
 
 <?php
 get_footer();
+*/
