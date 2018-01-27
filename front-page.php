@@ -30,6 +30,15 @@
  Hello there, I built this custom WordPress theme with the "_s" barebones template                                                                
 -->
 
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97296944-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-97296944-4');
+	</script>
+
 	<?php wp_head(); ?>
 </head>
 
@@ -56,7 +65,67 @@
 							<?php
 								wp_nav_menu( array('theme_location' => 'menu-1', 'menu_id'        => 'primary-menu',) );
 							?>
+						<!-- Trigger/Open The Modal -->
+						<i class="fa fa-search search-button-header" aria-hidden="true" id="searchBarModalSubmit"></i>
 						</nav>
+						
+						<!--- The Search Bar -->
+
+						<!-- The Modal -->
+						<div id="searchBarModal" class="modal">
+						
+						  <!-- Modal content -->
+						  <div class="modal-content">
+						    <span class="close">&times;</span>
+						    <!-- The search bar and logic-->
+							<script>
+								$(document).ready(function(){
+									var originalSearchQuery = document.getElementById("searchBarHeader").value;
+								    $("#searchBarHeader").focusout(function(){
+								        if (document.getElementById("searchBarHeader").value != originalSearchQuery) {
+									        // Submit the search
+									        document.getElementById('mainSearchForm').submit();
+								        }
+								    });
+								});
+							</script>
+								<header class="page-header">
+									<h1 class="page-title">
+										<form role="search" method="get" action="https://www.rydaway.com/" name="pageSearch" id="mainSearchForm">
+											<i class="fa fa-search" id="searchBarIcon" aria-hidden="true"></i>
+											<input type="search" id="searchBarHeader" placeholder="Looking for something?" value="<?php echo get_search_query(); ?>" name="s">
+											</input>
+										</form>
+									</h1>
+								</header><!-- .page-header -->
+						  </div>
+						
+						</div>
+
+						<!--- Search Bar Script -->
+						<script>
+							var modal = document.getElementById('searchBarModal');
+							var btn = document.getElementById("searchBarModalSubmit");
+							var span = document.getElementsByClassName("close")[0];
+							
+							// When the user clicks on the button, open the modal 
+							btn.onclick = function() {
+							    modal.style.display = "block";
+							}
+							
+							// When the user clicks on <span> (x), close the modal
+							span.onclick = function() {
+							    modal.style.display = "none";
+							}
+							
+							// When the user clicks anywhere outside of the modal, close it
+							window.onclick = function(event) {
+							    if (event.target == modal) {
+							        modal.style.display = "none";
+							    }
+							}
+						</script>
+
 					</div>
 			</div>
 		</div>

@@ -1147,6 +1147,10 @@ object {
 # Menu and Nav
 --------------------------------------------------------------*/
 
+.menu-rys-custom-menu-container{
+		float: left;
+	}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1199,6 +1203,7 @@ object {
 	.menu-rys-custom-menu-container{
 		width: 100%;
 		background-color: transparent;
+		float: left;
 	}
 	
 	.menu-container {
@@ -1663,7 +1668,146 @@ object {
 	filter: opacity(-0.3) grayscale(0.9) contrast(-1.5);
 }
 
+#searchBarPage {
+	outline: none;
+	border: none;
+	font-size: 1.3em;
+	margin: 0.67em 0;
+	color: #404040;
+	width: 90%;
+	margin: auto;
+	border-bottom: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: transparent;	
+}
 
+#searchBarPage:focus {
+	outline: none;
+	border-bottom: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #404040;
+}
+
+#searchBarIcon {
+	float: left;
+	font-size: 1.7em;
+	margin-right: 15px;
+}
+
+#searchBarHeader {
+	outline: none;
+	border: none;
+	font-size: 1.3em;
+	margin: 0.67em 0;
+	color: #404040;
+	width: 90%;
+	margin: auto;
+	border-bottom: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #404040;	
+}
+
+#searchBarHeader:focus {
+	outline: none;
+	border-bottom: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #404040;
+}
+
+#searchBarIcon {
+	float: left;
+	font-size: 1.7em;
+	margin-right: 15px;
+}
+
+
+
+#footerSearchBar {
+	outline: none;
+	border: none;
+	font-size: 0.8em;
+	font-family: 'Roboto', sans-serif;
+	margin: 0.67em 0;
+	color: #FFF;
+	background-color: transparent;
+	width: 90%;
+	margin: auto;
+	border-bottom: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: transparent;	
+}
+
+#footerSearchBar::placeholder {
+	color: #fff;
+}
+
+#footerSearchBar:focus {
+	outline: none;
+	border-bottom: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #FFF;
+}
+
+#footerSearchBarIcon {
+	margin-right: 5px;
+	float: left;
+	font-size: 1em;
+	color: #fff;
+}
+
+.searchText {
+	font-family: 'Roboto', sans-serif;
+}
+
+/* Modal Search Box - Top */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 10000;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search-button-header {
+	color: #fff;
+	margin-left: 5px;
+	font-size: 1.3em;
+}
+
+.search-button-header:hover {
+	color: #000;
+}
 
 
 

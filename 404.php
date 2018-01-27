@@ -13,7 +13,7 @@
 $rydaway_pageUrl = $_SERVER['REQUEST_URI'];
 $rydaway_backgroundImageUrl = get_template_directory_uri() . '/error-pages-includes/background' . mt_rand(1, 3) . '.jpg';
 
-get_header(); ?>
+get_header(); ?> 
 
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/error-pages-includes/main.css" type="text/css">

@@ -39,7 +39,7 @@
 			
 			<div class="footer-top-links">
 				<h2>Top Posts</h2>
-				<div class="footer-title-underline"></div>
+					<div class="footer-title-underline"></div>
 				<ul>
 					
 					
@@ -57,6 +57,28 @@ while ( $popularpost->have_posts() ) : $popularpost->the_post();
 endwhile;
 ?>
 				</ul>
+				
+				<!-- Search Bar -->
+				<script>
+					$(document).ready(function(){
+						var originalSearchQuery = document.getElementById("footerSearchBar").value;
+					    $("#footerSearchBar").focusout(function(){
+						    var newQuery = document.getElementById("footerSearchBar").value;
+					        if (newQuery != originalSearchQuery) {
+						        // Submit the search
+						        document.getElementById('footerSearchForm').submit();
+					        }
+					    });
+					});
+				</script>
+				<p class="searchText">
+					<form role="search" method="get" action="https://www.rydaway.com/" name="pageSearch" id="footerSearchForm">
+						<i class="fa fa-search" id="footerSearchBarIcon" aria-hidden="true"></i>
+						<input type="search" id="footerSearchBar" placeholder="Looking for something?" name="s">
+						</input>
+					</form>
+				</p>
+				
 
 			</div>
 			
