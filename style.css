@@ -1488,6 +1488,18 @@ object {
 		margin-top: 10px;
 	}
 	
+	.mobile-header-search-bar {
+		display: block !important;
+	}
+	
+	.search-button-header {
+		display: none;
+	}
+	
+	.mobile-search-button-header {
+		display: block;
+	}
+	
 	
 }
 
@@ -1807,6 +1819,32 @@ object {
 
 .search-button-header:hover {
 	color: #000;
+}
+
+.mobile-header-search-bar {
+	display: none;
+	width: 50%;
+	margin: auto;
+	height: 35px;
+	border: solid;
+	border-width: 1px;
+	border-color: #fff;
+	background-color: transparent;
+	margin-top: 25px;
+	color: #fff;
+	margin-bottom: 25px;
+	padding: 5px;
+}
+
+.mobile-header-search-bar:focus {
+	border-color: #000;
+}
+
+.mobile-search-button-header {
+	display: none;
+	color: #fff;
+	margin-left: 5px;
+	font-size: 1.3em;
 }
 
 

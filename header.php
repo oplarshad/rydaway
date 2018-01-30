@@ -75,6 +75,10 @@
 							?>
 						<!-- Trigger/Open The Modal -->
 						<i class="fa fa-search search-button-header" aria-hidden="true" id="searchBarModalSubmit"></i>
+<!--
+						<i class="fa fa-search mobile-search-button-header" aria-hidden="true"></i>
+						<input class="mobile-header-search-bar" placeholder="Looking for something?"></input>
+-->
 						</nav>
 						
 						<!--- The Search Bar -->
