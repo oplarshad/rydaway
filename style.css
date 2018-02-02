@@ -377,10 +377,12 @@ ul, ol {
 
 ul {
 	list-style: disc;
+	font-family: 'Roboto Slab', serif;
 }
 
 ol {
 	list-style: decimal;
+	font-family: 'Roboto Slab', serif;
 }
 
 li > ul,
