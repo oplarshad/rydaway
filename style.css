@@ -1849,6 +1849,11 @@ object {
 	font-size: 1.3em;
 }
 
+.logged-in-as a {
+	color: #fff;
+	
+}
+
 
 
 
