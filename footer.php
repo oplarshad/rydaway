@@ -22,7 +22,7 @@
 				<div class="footer-title-underline"></div>
 				<p>RYDAWAY is an online travel resource about a guy named Ryder, his adventures, and the people he meets along the way.</p>
 				
-				<a href="https://github.com/ryderdamen/rydaway" target="_blank"><i class="fa fa-wordpress" aria-hidden="true"></i> This site runs on a home-built, open-source WordPress theme</a>
+				<a href="https://github.com/ryderdamen/rydaway" target="_blank"><i class="fa fa-wordpress" aria-hidden="true"></i> RYDAWAY is a WordPress site, running a custom theme built by me. Click for more info.</a>
 			</div>
 			
 			<div class="footer-contact-info">
@@ -78,28 +78,8 @@ endwhile;
 						</input>
 					</form>
 				</p>
-				
-
 			</div>
-			
-		</div>
-		
-<!--
-		
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'rydaway' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'rydaway' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'rydaway' ), 'rydaway', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
-		
-		
-		
+		</div>		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

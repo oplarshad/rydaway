@@ -217,3 +217,46 @@ function new_excerpt_more( $more ) {
     return ' ...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+
+
+function rydaway_shortcode_postImageLink( $atts, $content = null ) {
+    // Adds the ability to add a shortcode [rydaway-post id="1234"] whereby an image link will be added to that post
+        
+    // Set attributes and defaults
+    $atts = shortcode_atts(
+		array(
+            'id' => false,
+		), 
+		$atts,
+		'rydaway-post'
+    );
+    
+    if ($atts['id'] === false) return;
+        
+    try {
+	    // Retrieve information (title, permalink, image URL) of the post
+	    $postPermalink = get_the_permalink($atts['id']);
+	    $postTitle = get_the_title($atts['id']);
+	    
+	    $postImageUrl = wp_get_attachment_url(get_post_thumbnail_id($atts['id']));
+	    if (!$postImageUrl) { // If no image, return the default template one
+		    $postImageUrl = get_template_directory_uri() . "/img/rydaway_logo_rast.png";
+	 	}
+	    
+	    // Build the HTML
+	    $return = '<a href="' . $postPermalink . '" rel="bookmark" class="rydaway-linked-post-anchor" title="Link to ' . $postTitle . '">'; // Opening the anchor
+	    $return .= '<div class="rydaway-linked-post" style="background-image: url(' . $postImageUrl . ')">';
+	    $return .= '<h3 class="rydaway-linked-post-txt"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;
+' . $postTitle . '</h3>'; // Printing the title
+	    $return .= '</div></a>'; // Closing the div, closing the anchor
+	    return $return;
+	    
+	}
+	catch (Exception $e) {
+		return null; // Print nothing
+	}
+	
+}
+add_shortcode( 'rydaway-post', 'rydaway_shortcode_postImageLink' ); // Adds the shortcode
+
