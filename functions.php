@@ -245,7 +245,7 @@ function rydaway_shortcode_postImageLink( $atts, $content = null ) {
 	 	}
 	    
 	    // Build the HTML
-	    $return = '<a href="' . $postPermalink . '" rel="bookmark" class="rydaway-linked-post-anchor" title="Link to ' . $postTitle . '">'; // Opening the anchor
+	    $return = '<a href="' . $postPermalink . '" rel="bookmark" target="_blank" class="rydaway-linked-post-anchor" title="Link to ' . $postTitle . '">'; // Opening the anchor
 	    $return .= '<div class="rydaway-linked-post" style="background-image: url(' . $postImageUrl . ')">';
 	    $return .= '<h3 class="rydaway-linked-post-txt"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;
 ' . $postTitle . '</h3>'; // Printing the title
