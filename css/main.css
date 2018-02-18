@@ -621,31 +621,6 @@ a:hover, a:active {
 }
 
 
-@media only screen and (max-width: 768px) {
-	
-/* 	This is fucking messy */
-	
-	.main-site-navigation ul ul {
-		display: none;
-	}
-	
-	.main-site-navigation ul ul ul {
-		display: none;
-	}
-	
-	.header-image-container {
-		display: block;
-		width: 100%;
-		
-	}
-	
-	.site-branding {
-		margin-bottom: 100px;
-	}
-
-
-	
-}
 
 
 
@@ -1039,6 +1014,7 @@ object {
 .single-post-title-container h1 {
 	font-size: 18px;
 }
+
 
 .site-footer {
 	background-color: #1a348b;
@@ -1895,6 +1871,152 @@ object {
 	color: #fff;
 	
 }
+
+/* MOBILE MENU - 2018 */
+
+.mobile-menu {
+	display: none;
+}
+
+.mobile-search-bar {
+	display: none;
+	height: 100px;
+	background-color: #1a348b;
+	position: relative;
+}
+
+.mobile-search-bar input {
+	background-color: transparent;
+	height: 75px;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	outline: none;
+	border: none;
+	font-size: 18px;
+	margin: 0.67em 0;
+	color: #fff;
+	width: 90%;
+	margin: auto;
+	border-bottom: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #fff;
+}
+
+.mobile-search-bar input:focus {
+	color: #fff;
+	
+}
+
+.mobile-search-bar input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+.mobile-search-bar input::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+.mobile-search-bar input:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+.mobile-search-bar input:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+}
+
+
+@media only screen and (max-width: 768px) {
+		
+	.main-site-navigation ul ul {
+		display: none;
+	}
+
+	
+	.mobile-menu {
+		display: block;
+		height: 100px;
+		background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+	}
+	
+	.header-content .logo-container {
+		display: none;
+	}
+	
+	.mobile-menu-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 30px;
+		color: #fff;
+	}
+	
+	.mobile-menu-logo {
+		float: left;
+		height: 100%;
+		width: 50%;
+		position: relative;
+	}
+	
+	.mobile-site-title {
+		font-size: 14px;
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.mobile-menu-button {
+		float: left;
+		height: 100%;
+		width: 25%;
+		position: relative;
+	}
+	
+	.mobile-menu-clicked {
+		float: left;
+		height: 100%;
+		width: 25%;
+		position: relative;
+		background-color: #f8f8f8;
+		color: #0fb8ad;
+	}
+	
+	
+	.mobile-menu-search {
+		float: left;
+		height: 100%;
+		width: 25%;
+		position: relative;
+	}
+	
+	.main-site-navigation ul ul ul {
+		display: none;
+	}
+	
+	.header-image-container {
+		display: block;
+		width: 100%;
+		
+	}
+	
+	.site-branding {
+		margin-bottom: 100px;
+		display: none;
+	}
+
+	#searchBarModalSubmit {
+		display: none;
+	}
+	
+	.site-header a {
+		font-size: 18px;
+		text-align: right;
+	}
+	
+}
+
 
 
 
