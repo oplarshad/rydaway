@@ -13,16 +13,16 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<!-- Meta Tags -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#1a348b">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<?php $templateDirectory = get_template_directory_uri(); ?>
+	<link rel="manifest" href="<?php echo $templateDirectory; ?>/inc/manifest.json">
 
-	
+
+
 	<!--
-
                                 |                                             
                                  |                                             
    ______________________________|_______________________________              
@@ -34,22 +34,16 @@
                             ^/   ^   \^                                        
                             U    U    U                               
                               RYDAWAY               
-
-
- Hello there, I built this custom WordPress theme with the "_s" barebones template                                                                
--->
-
-	
+	 Hello there, I built this custom WordPress theme with the "_s" barebones template                                                                
+	-->
 	<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97296944-4"></script>
-	<script>
+	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-97296944-4"></script>
+	<script async="async">
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 	  gtag('config', 'UA-97296944-4');
 	</script>
-
-
 	<?php wp_head(); ?>
 </head>
 
@@ -78,89 +72,6 @@
 				</form>
 				</input>
 			</div>
-			<script>
-				$(document).ready(function() {
-					
-					var menuOpen = false;
-					var searchOpen = false;
-					
-					function openMenu() {
-						document.getElementById('mobile-menu-button').style.backgroundColor = '#f8f8f8';
-						document.getElementById('mobile-menu-button-icon').style.color = '#0fb8ad';
-						document.getElementById('main-nav').style.display = 'block';
-						document.getElementById('masthead').style.background = '#1a348b';
-						menuOpen = true;
-					}
-					
-					function closeMenu() {
-						document.getElementById('mobile-menu-button').style.backgroundColor = 'transparent';
-						document.getElementById('mobile-menu-button-icon').style.color = '#fff';
-						document.getElementById('main-nav').style.display = 'none';
-						document.getElementById('masthead').style.background = 'linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)';
-						menuOpen = false;
-					}
-					
-					function openSearch() {
-						document.getElementById('mobile-menu-search').style.backgroundColor = '#f8f8f8';
-						document.getElementById('mobile-menu-search-icon').style.color = '#0fb8ad';
-						document.getElementById('mobile-search-bar').style.display = 'block';
-						searchOpen = true;
-					}
-					
-					function closeSearch() {
-						document.getElementById('mobile-menu-search').style.backgroundColor = 'transparent';
-						document.getElementById('mobile-menu-search-icon').style.color = '#fff';
-						document.getElementById('mobile-search-bar').style.display = 'none';
-						searchOpen = false;
-					}
-					
-					function resetHeader() {
-						document.getElementById('main-nav').style.display = 'block';
-					}
-					
-					// Mobile Search Bar Logic
-					$(document).ready(function(){
-									var originalSearchQuery = document.getElementById("mobileSearchInput").value;
-								    $("#searchBarHeader").focusout(function(){
-								        if (document.getElementById("mobileSearchInput").value != originalSearchQuery) {
-									        // Submit the search
-									        document.getElementById('mainSearchForm').submit();
-								        }
-								    });
-								});
-					
-					// Clickable Logic
-				    $('#mobile-menu-button').on('click', function() {
-					    if (!menuOpen) {
-						    openMenu()
-						    closeSearch()
-					    }
-					    else { // The menu is already open. Close it.
-						    closeMenu()
-					    }
-				    });
-				    
-				    $('#mobile-menu-search').on('click', function() {
-					    if (!searchOpen) { // The search is not open, open it.
-						    openSearch()
-						    closeMenu()
-					    }
-					    else { // The search is already open. Close it.
-						    closeSearch()
-					    }
-				    });
-					
-					// Resizing Logic
-					 $(window).resize(function() {
-						 if ($(window).width() > 768) {
-						 	resetHeader()
-						 }
-						 if ($(window).width() < 768) {
-						 	closeMenu()
-						 }
-						});
-				});
-			</script>
 			
 			<!-- Regular Navigation -->
 			<div class="site-branding" id="main-nav">
@@ -245,14 +156,15 @@
 			<!-- The Featured Image and Title -->	
 			<?php if ( is_single() ) : 
 					if ( has_post_thumbnail() ) :
-						$this_posts_thumbnail_url = get_the_post_thumbnail_url();
+						//$this_posts_thumbnail_url = get_the_post_thumbnail_url();
+						$this_posts_thumbnail_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium_large')[0];
 						$this_posts_title = get_the_title();
 			?>
 
 			<div class="header-image-container">
 					<div class="header-image" style="background-image: url(<?php echo $this_posts_thumbnail_url ?>);">
 				</div>
-				<img class="plane-top" src="<?php echo get_template_directory_uri() . "/img/plane_top.png"; ?>">
+				<img class="plane-top" src="<?php echo get_template_directory_uri() . "/img/plane_top.png"; ?>" alt="The RYDAWAY logo: a small single engine airplane viewed from the top">
 				<div class="single-post-title-container">
 						<h1><?php echo $this_posts_title ?></h1>
 				</div>

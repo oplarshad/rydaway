@@ -1,0 +1,33 @@
+{
+  "name": "Rydaway",
+  "short_name": "Rydaway",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0fb8ad",
+  "description": "An online travel resource about a guy named Ryder",
+  "icons": [{
+    "src": "./manifest-images/homescreen48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "./manifest-images/homescreen72.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "./manifest-images/homescreen96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "./manifest-images/homescreen144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "./manifest-images/homescreen168.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": "./manifest-images/homescreen192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}
