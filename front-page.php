@@ -12,9 +12,6 @@
 	<meta name="theme-color" content="#1a348b">
 	<meta name="description" content="An online travel resource about a guy named Ryder."/>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-<!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/r-logo-font/styles.css">
-<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 	<!--
 
                                 |                                             
@@ -160,8 +157,6 @@
 		<p>An online travel resource.</p>
 	</div>
 	
-<!-- 	<div class="notification-panel"><p>Hey! I'm currently doing some coding on my site. Please stick with me while it looks horribly ugly. - October 2, 2017, 6PM in Canada </p></div> -->
-
 	<div id="content" class="site-content">
 		<?php
 			
