@@ -117,11 +117,15 @@ add_action( 'widgets_init', 'rydaway_widgets_init' );
  * Enqueue scripts and styles.
  */
 function rydaway_scripts() {
-	wp_enqueue_style( 'rydaway-style', get_template_directory_uri() . '/css/main.min.css' );
+	
+	// Styles
+	wp_enqueue_style( 'rydaway-style', get_template_directory_uri() . '/css/main.css' );
 	wp_enqueue_style( 'rydaway-font-awesome', get_template_directory_uri() . '/css/fontawesome-all.min.css' );
+	wp_enqueue_style( 'rydaway-ryder-logo-font', get_template_directory_uri() . '/css/r-logo-font/styles.css' );
 
+	// Scripts
 	wp_enqueue_script( 'rydaway-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
+	wp_enqueue_script( 'rydaway-pace', get_template_directory_uri() . '/js/pace.js');
 	wp_enqueue_script( 'rydaway-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -240,7 +244,7 @@ function rydaway_shortcode_postImageLink( $atts, $content = null ) {
 	    $postPermalink = get_the_permalink($atts['id']);
 	    $postTitle = get_the_title($atts['id']);
 	    
-	    $postImageUrl = wp_get_attachment_url(get_post_thumbnail_id($atts['id']));
+	    $postImageUrl = wp_get_attachment_url(get_post_thumbnail_id($atts['id'], 'large'));
 	    if (!$postImageUrl) { // If no image, return the default template one
 		    $postImageUrl = get_template_directory_uri() . "/img/rydaway_logo_rast.png";
 	 	}
