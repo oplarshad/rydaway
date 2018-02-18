@@ -10,30 +10,56 @@
  */
 
 ?>
-
 	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer">
-		
 		<div class="footer-container" style="background-image: url(<?php echo get_template_directory_uri() . "/img/plane_ud.png"; ?>);">
-			
 			<div class="footer-site-info">
 				<h2>&copy; RYDAWAY <?php echo date('Y'); ?></h2>
 				<div class="footer-title-underline"></div>
 				<p>RYDAWAY is an online travel resource about a guy named Ryder, his adventures, and the people he meets along the way.</p>
-				
 				<a href="https://github.com/ryderdamen/rydaway" target="_blank" rel="noopener"><i class="fab fa-wordpress" aria-hidden="true"></i> RYDAWAY is a WordPress site, running a custom theme built by me. Click for more info.</a>
 			</div>
-			
+
 			<div class="footer-contact-info">
 				<h2>Contact Info</h2>
 				<div class="footer-title-underline"></div>
-				<a href="https://instagram.com/rydaway" target="_blank" rel="noopener"> <i class="fab fa-instagram social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Follow me on Instagram</a> <br>
 				
+				<a class="contact-info-container" href="https://instagram.com/rydaway" target="_blank" rel="noopener">
+					<div class="contact-info-logo">
+						<i class="fab fa-instagram" aria-hidden="true"></i>
+					</div>
+					<p class="contact-info-text">
+						Follow me on Instagram
+					</p>
+				</a>
 				
-				<a href='m&#97;ilto&#58;r%79der%&#52;0ryd&#97;w&#97;y&#46;c%&#54;F&#109;'> <i class="fas fa-envelope social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Send me a message</a> <br>
-				<a href="https://twitter.com/rydamen" target="_blank" rel="noopener"> <i class="fab fa-twitter social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Follow me on Twitter</a> <br>
-				<a href="http://ryderdamen.com/" target="_blank" rel="noopener"> <i class="icon-r-logo social-icon" aria-hidden="true"></i>&nbsp;&nbsp;Check out my main site</a> <br>
+				<a class="contact-info-container" href="m&#97;ilto&#58;r%79der%&#52;0ryd&#97;w&#97;y&#46;c%&#54;F&#109;" target="_blank">
+					<div class="contact-info-logo">
+						<i class="fas fa-envelope" aria-hidden="true"></i>
+					</div>
+					<p class="contact-info-text">
+						Send me a message
+					</p>
+				</a>
+				
+				<a class="contact-info-container" href="https://twitter.com/rydamen" target="_blank" rel="noopener">
+					<div class="contact-info-logo">
+						<i class="fab fa-twitter" aria-hidden="true"></i>
+					</div>
+					<p class="contact-info-text">
+						Follow me on Twitter
+					</p>
+				</a>
+				
+				<a class="contact-info-container" href="https://ryderdamen.com" target="_blank" rel="noopener">
+					<div class="contact-info-logo">
+						<i class="icon-r-logo" aria-hidden="true"></i>
+					</div>
+					<p class="contact-info-text">
+						Check out my main site
+					</p>
+				</a>
+				
 										
 			</div>
 			
