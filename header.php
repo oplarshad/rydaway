@@ -20,7 +20,7 @@
 	
 	<!-- Styles & Scripts -->
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/r-logo-font/styles.css">
 	<script src="<?php echo get_template_directory_uri(); ?>/js/pace.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -78,11 +78,8 @@
 								wp_nav_menu( array('theme_location' => 'menu-1', 'menu_id'        => 'primary-menu',) );
 							?>
 						<!-- Trigger/Open The Modal -->
-						<i class="fa fa-search search-button-header" aria-hidden="true" id="searchBarModalSubmit"></i>
-<!--
-						<i class="fa fa-search mobile-search-button-header" aria-hidden="true"></i>
-						<input class="mobile-header-search-bar" placeholder="Looking for something?"></input>
--->
+						<i class="fas fa-search search-button-header" aria-hidden="true" id="searchBarModalSubmit"></i>
+
 						</nav>
 						
 						<!--- The Search Bar -->
@@ -108,7 +105,7 @@
 								<header class="page-header">
 									<h1 class="page-title">
 										<form role="search" method="get" action="https://www.rydaway.com/" name="pageSearch" id="mainSearchForm">
-											<i class="fa fa-search" id="searchBarIcon" aria-hidden="true"></i>
+											<i class="fas fa-search" id="searchBarIcon" aria-hidden="true"></i>
 											<input type="search" id="searchBarHeader" placeholder="Looking for something?" value="<?php echo get_search_query(); ?>" name="s">
 											</input>
 										</form>

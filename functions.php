@@ -118,6 +118,7 @@ add_action( 'widgets_init', 'rydaway_widgets_init' );
  */
 function rydaway_scripts() {
 	wp_enqueue_style( 'rydaway-style', get_template_directory_uri() . '/css/main.min.css' );
+	wp_enqueue_style( 'rydaway-font-awesome', get_template_directory_uri() . '/css/fontawesome-all.min.css' );
 
 	wp_enqueue_script( 'rydaway-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -247,7 +248,7 @@ function rydaway_shortcode_postImageLink( $atts, $content = null ) {
 	    // Build the HTML
 	    $return = '<a href="' . $postPermalink . '" rel="bookmark" target="_blank" class="rydaway-linked-post-anchor" title="Link to ' . $postTitle . '">'; // Opening the anchor
 	    $return .= '<div class="rydaway-linked-post" style="background-image: url(' . $postImageUrl . ')">';
-	    $return .= '<h3 class="rydaway-linked-post-txt"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;
+	    $return .= '<h3 class="rydaway-linked-post-txt"><i class="fas fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;
 ' . $postTitle . '</h3>'; // Printing the title
 	    $return .= '</div></a>'; // Closing the div, closing the anchor
 	    return $return;
