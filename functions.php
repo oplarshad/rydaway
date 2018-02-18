@@ -117,7 +117,7 @@ add_action( 'widgets_init', 'rydaway_widgets_init' );
  * Enqueue scripts and styles.
  */
 function rydaway_scripts() {
-	wp_enqueue_style( 'rydaway-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'rydaway-style', get_template_directory_uri() . '/css/main.min.css' );
 
 	wp_enqueue_script( 'rydaway-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -259,4 +259,17 @@ function rydaway_shortcode_postImageLink( $atts, $content = null ) {
 	
 }
 add_shortcode( 'rydaway-post', 'rydaway_shortcode_postImageLink' ); // Adds the shortcode
+
+
+
+
+// if a style.min.css file exists, use that, otherwise use style.css
+function style_or_min_style() {
+    $located = locate_template( 'style.min.css' );
+     if ($located != '' ) {
+          echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.min.css" />';
+     } else {
+          echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.css" />';
+     }
+}
 
