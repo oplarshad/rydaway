@@ -16,10 +16,11 @@ if ( have_posts() ) : ?>
 $this_posts_thumbnail_url = get_the_post_thumbnail_url();
 //the_archive_description( '<div class="archive-description">', '</div>' );
 ?>
-  <div class="archive-header-image-container">
-    <div class="header-image" style="background-image: url(<?php echo $this_posts_thumbnail_url ?>);">
+  <div class="archive-header">
+    <div class="archive-title-background">
+      <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
     </div>
-    <div class="archive-title-container">
+     <div class="archive-title-container">
       <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
     </div>
   </div>
@@ -40,7 +41,7 @@ while ( have_posts() ) : the_post();
 		    // Retrieve the posts's associated image;
 		    // If the post doesn't have an associated image, return a standard rydaway image
 		    
-		    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large')[0];
+		    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium')[0];
 		    if (!$image) {
 			    $image = get_template_directory_uri() . "/img/rydaway_logo_rast.png";
 		    }
