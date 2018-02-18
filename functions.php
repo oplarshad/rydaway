@@ -83,6 +83,7 @@ if ( ! function_exists( 'rydaway_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'rydaway_setup' );
 
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -119,13 +120,14 @@ add_action( 'widgets_init', 'rydaway_widgets_init' );
 function rydaway_scripts() {
 	
 	// Styles
-	wp_enqueue_style( 'rydaway-style', get_template_directory_uri() . '/css/main.css' );
+	wp_enqueue_style( 'rydaway-style', get_template_directory_uri() . '/css/main.min.css' );
 	wp_enqueue_style( 'rydaway-font-awesome', get_template_directory_uri() . '/css/fontawesome-all.min.css' );
 	wp_enqueue_style( 'rydaway-ryder-logo-font', get_template_directory_uri() . '/css/r-logo-font/styles.css' );
 
 	// Scripts
 	wp_enqueue_script( 'rydaway-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'rydaway-pace', get_template_directory_uri() . '/js/pace.js');
+	wp_enqueue_script( 'rydaway-mobile-navigation', get_template_directory_uri() . '/js/mobile-menu.min.js', array('jquery'));
 	wp_enqueue_script( 'rydaway-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -243,8 +245,9 @@ function rydaway_shortcode_postImageLink( $atts, $content = null ) {
 	    // Retrieve information (title, permalink, image URL) of the post
 	    $postPermalink = get_the_permalink($atts['id']);
 	    $postTitle = get_the_title($atts['id']);
-	    
-	    $postImageUrl = wp_get_attachment_url(get_post_thumbnail_id($atts['id'], 'large'));
+	    	    
+	    $postImageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($atts['id']), 'medium_large')[0];
+
 	    if (!$postImageUrl) { // If no image, return the default template one
 		    $postImageUrl = get_template_directory_uri() . "/img/rydaway_logo_rast.png";
 	 	}
@@ -252,8 +255,9 @@ function rydaway_shortcode_postImageLink( $atts, $content = null ) {
 	    // Build the HTML
 	    $return = '<a href="' . $postPermalink . '" rel="bookmark" target="_blank" class="rydaway-linked-post-anchor" title="Link to ' . $postTitle . '">'; // Opening the anchor
 	    $return .= '<div class="rydaway-linked-post" style="background-image: url(' . $postImageUrl . ')">';
-	    $return .= '<h3 class="rydaway-linked-post-txt"><i class="fas fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;
-' . $postTitle . '</h3>'; // Printing the title
+	    $return .= '<div class="rydaway-linked-post-des"><p>You may also like...</p></div>';
+	    $return .= '<p class="rydaway-linked-post-txt"><i class="fas fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;
+' . $postTitle . '</p>'; // Printing the title
 	    $return .= '</div></a>'; // Closing the div, closing the anchor
 	    return $return;
 	    
@@ -264,6 +268,31 @@ function rydaway_shortcode_postImageLink( $atts, $content = null ) {
 	
 }
 add_shortcode( 'rydaway-post', 'rydaway_shortcode_postImageLink' ); // Adds the shortcode
+
+// Adding Asychronous Scripts
+function add_async_attribute($tag, $handle) {
+	switch ($handle) {
+		case 'jquery':
+			return str_replace( ' src', ' async="async" src', $tag );
+			break;
+		case 'rydaway-navigation':
+			return str_replace( ' src', ' async="async" src', $tag );
+			break;
+		case 'rydaway-mobile-navigation':
+			return str_replace( ' src', ' async="async" src', $tag );
+			break;
+		case 'rydaway-pace':
+			return str_replace( ' src', ' async="async" src', $tag );
+			break;
+		case 'rydaway-skip-link-focus-fix':
+			return str_replace( ' src', ' async="async" src', $tag );
+			break;
+		default:
+			return $tag;
+	}
+}
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+
 
 
 
