@@ -1112,7 +1112,7 @@ object {
 	width: 100%;
 	height: 150px;
 	padding: 5%;
-	padding-top: 50px;
+	padding-top: 40px;
 	padding-bottom: 50px;
 	filter: opacity(0.9);
 	margin-bottom: 25px;
@@ -1134,6 +1134,23 @@ object {
 	font-size: 1.5em;
 	font-weight: 100;
 	padding: 10px;
+}
+
+.rydaway-linked-post-des {	
+	background-color: #1a348b;
+	width: 200px;
+	text-align: center;
+	z-index: 10;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+}
+
+.rydaway-linked-post-des p {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-size: 1em;
 }
 
 @media only screen and (max-width: 768px) { 
