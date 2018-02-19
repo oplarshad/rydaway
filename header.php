@@ -19,9 +19,6 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php $templateDirectory = get_template_directory_uri(); ?>
 	<link rel="manifest" href="<?php echo $templateDirectory; ?>/inc/manifest.json">
-
-
-
 	<!--
                                 |                                             
                                  |                                             
