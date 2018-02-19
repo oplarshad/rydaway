@@ -30,7 +30,7 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title">
 					<form role="search" method="get" action="https://www.rydaway.com/" name="pageSearch" id="mainSearchForm">
-						<i class="fa fa-search" id="searchBarIcon" aria-hidden="true"></i>
+						<i class="fas fa-search" id="searchBarIcon" aria-hidden="true"></i>
 						<input type="search" id="searchBarPage" value="<?php echo get_search_query(); ?>" name="s">
 						</input>
 					</form>

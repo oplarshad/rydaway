@@ -72,6 +72,9 @@
 				</form>
 				</input>
 			</div>
+			<div class="mobile-menu-nav" id="mobile-menu-nav">
+				<?php wp_nav_menu( array('theme_location' => 'menu-1', 'menu_id' => 'mobile-menu-nav',) ); ?>
+			</div>
 			
 			<!-- Regular Navigation -->
 			<div class="site-branding" id="main-nav">

@@ -643,6 +643,10 @@ a:hover, a:active {
 	overflow: hidden;
 }
 
+.site-main p {
+	line-height: 35px;
+}
+
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -1112,7 +1116,7 @@ object {
 	width: 100%;
 	height: 150px;
 	padding: 5%;
-	padding-top: 40px;
+	padding-top: 35px;
 	padding-bottom: 50px;
 	filter: opacity(0.9);
 	margin-bottom: 25px;
@@ -1131,7 +1135,7 @@ object {
 	background-color: rgba(0,0,0,0.8);
 	display: inline;
 	color: #fff;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	font-weight: 100;
 	padding: 10px;
 }
@@ -1143,20 +1147,24 @@ object {
 	z-index: 10;
 	padding-right: 10px;
 	padding-left: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 7px;
 }
 
 .rydaway-linked-post-des p {
 	margin: 0;
 	padding: 0;
 	color: #fff;
-	font-size: 1em;
+	font-size: 0.8em;
 }
 
 @media only screen and (max-width: 768px) { 
 	.rydaway-linked-post-txt {
 		background-color: #222;
-		font-size: 1em;
+		font-size: 0.8em;
+	}
+	
+	.rydaway-linked-post-des p {
+	font-size: 0.7em;
 	}
 }
 
@@ -1773,11 +1781,15 @@ object {
 	font-size: 1.3em;
 	margin: 0.67em 0;
 	color: #404040;
-	width: 90%;
+	width: 100%;
 	margin: auto;
 	border-bottom: solid;
 	border-bottom-width: 3px;
 	border-bottom-color: transparent;	
+}
+
+#mainSearchForm {
+	display: flex;
 }
 
 #searchBarPage:focus {
@@ -1790,7 +1802,9 @@ object {
 #searchBarIcon {
 	float: left;
 	font-size: 1.7em;
-	margin-right: 15px;
+	margin-right: 30px;
+	width: 40px;
+	padding-top: 10px;
 }
 
 #searchBarHeader {
@@ -1812,13 +1826,6 @@ object {
 	border-bottom-width: 3px;
 	border-bottom-color: #404040;
 }
-
-#searchBarIcon {
-	float: left;
-	font-size: 1.7em;
-	margin-right: 15px;
-}
-
 
 
 #footerSearchBar {
@@ -1945,6 +1952,10 @@ object {
 	display: none;
 }
 
+.mobile-menu-nav {
+	display: none;
+}
+
 .mobile-search-bar {
 	display: none;
 	height: 100px;
@@ -1967,13 +1978,11 @@ object {
 	color: #fff;
 	width: 90%;
 	margin: auto;
-	border-bottom: solid;
-	border-bottom-width: 3px;
-	border-bottom-color: #fff;
 }
 
 .mobile-search-bar input:focus {
 	color: #fff;
+	text-decoration: none;
 	
 }
 
@@ -2058,6 +2067,52 @@ object {
 		height: 100%;
 		width: 25%;
 		position: relative;
+	}
+	
+	
+	#mobile-menu-nav {
+		 list-style-type: none;
+		 padding: 0;
+		 padding-top: 25px;
+		 padding-bottom: 25px;
+		 margin: 0;
+	}
+	
+	#mobile-menu-nav .sub-menu {
+		list-style-type: none;
+		padding: 0;
+		 margin: 0;
+	}
+	
+	#mobile-menu-nav .sub-menu li {
+		float: none;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		color: #fff;
+		font-size: 14px;
+		border: none;
+	}
+	
+	#mobile-menu-nav .sub-menu li a {
+		font-size: 14px;
+		color: #f8f8f8;
+		}
+	
+	.mobile-menu-nav {
+		display: none;
+		background-color: #1a348b;
+		overflow: auto;
+	}
+	
+	
+	.mobile-menu-nav li {
+		width: 100%;
+		float: none;
+		font-size: 22px;
+		text-align: right;
+		padding: 10px;
+		padding-right: 25px;
 	}
 	
 	.main-site-navigation ul ul ul {

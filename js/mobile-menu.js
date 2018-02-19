@@ -10,16 +10,14 @@ jQuery(document).ready(function($) {
 		function openMenu() {
 			document.getElementById('mobile-menu-button').style.backgroundColor = '#f8f8f8';
 			document.getElementById('mobile-menu-button-icon').style.color = '#0fb8ad';
-			document.getElementById('main-nav').style.display = 'block';
-			document.getElementById('masthead').style.background = '#1a348b';
+			document.getElementById('mobile-menu-nav').style.display = 'block';
 			menuOpen = true;
 		}
 		
 		function closeMenu() {
 			document.getElementById('mobile-menu-button').style.backgroundColor = 'transparent';
 			document.getElementById('mobile-menu-button-icon').style.color = '#fff';
-			document.getElementById('main-nav').style.display = 'none';
-			document.getElementById('masthead').style.background = 'linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)';
+			document.getElementById('mobile-menu-nav').style.display = 'none';
 			menuOpen = false;
 		}
 		
@@ -37,9 +35,6 @@ jQuery(document).ready(function($) {
 			searchOpen = false;
 		}
 		
-		function resetHeader() {
-			document.getElementById('main-nav').style.display = 'block';
-		}
 		
 		// Mobile Search Bar Logic
 		$(document).ready(function(){
@@ -73,15 +68,6 @@ jQuery(document).ready(function($) {
 		    }
 	    });
 		
-		// Resizing Logic
-		 $(window).resize(function() {
-			 if ($(window).width() > 768) {
-			 	resetHeader()
-			 }
-			 if ($(window).width() < 768) {
-			 	closeMenu()
-			 }
-			});
 	});
 
 });
