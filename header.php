@@ -2,7 +2,6 @@
 /**
  * The Header for all pages
 */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -14,18 +13,15 @@
 	<link rel="manifest" href="<?php echo $templateDirectory; ?>/inc/manifest.json">
 	<?php $templateDirectory = get_template_directory_uri(); ?>
 	<!--
-                                |                                             
-                                 |                                             
-   ______________________________|_______________________________              
-                       ----\--||___||--/----                                   
-                            \ :==^==: /                                        
-                             \|  o  |/                                         
-                              \_____/                                          
-                              /  |  \                                          
-                            ^/   ^   \^                                        
-                            U    U    U                               
-                              RYDAWAY               
-	 Hello there, I built this custom WordPress theme myself: check out github.com/ryderdamen/rydaway for more info                                                               
+	  _____ __     __ _____       __          __   __     __
+	 |  __ \\ \   / /|  __ \    /\\ \        / //\ \ \   / /
+	 | |__) |\ \_/ / | |  | |  /  \\ \  /\  / //  \ \ \_/ / 
+	 |  _  /  \   /  | |  | | / /\ \\ \/  \/ // /\ \ \   /  
+	 | | \ \   | |   | |__| |/ ____ \\  /\  // ____ \ | |   
+	 |_|  \_\  |_|   |_____//_/    \_\\/  \//_/    \_\|_|   
+
+	 Hello there, I built this custom WordPress theme myself
+	 check out github.com/ryderdamen/rydaway for more info                                                               
 	-->
 	<!-- Google Analytics -->
 	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-97296944-4"></script>
@@ -47,7 +43,7 @@
 			<div class="mobile-menu">
 				<div class="mobile-menu-logo">
 					<h1 class="mobile-site-title">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 					</h1>
 				</div>
 				<div class="mobile-menu-button" id="mobile-menu-button">
