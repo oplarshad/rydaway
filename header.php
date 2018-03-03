@@ -149,12 +149,13 @@
 						//$this_posts_thumbnail_url = get_the_post_thumbnail_url();
 						$this_posts_thumbnail_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium_large')[0];
 						$this_posts_title = get_the_title();
+						wp_enqueue_script( 'rydaway-single', get_template_directory_uri() . '/js/single.js', array(), '20151215', true );
 			?>
 
 			<div class="header-image-container">
 					<div class="header-image" style="background-image: url(<?php echo $this_posts_thumbnail_url ?>);">
 				</div>
-				<img class="plane-top" src="<?php echo get_template_directory_uri() . "/img/plane_top.png"; ?>" alt="The RYDAWAY logo: a small single engine airplane viewed from the top">
+				<img class="plane-top" id="planeTop" src="<?php echo get_template_directory_uri() . "/img/plane_top.png"; ?>" alt="The RYDAWAY logo: a small single engine airplane viewed from the top">
 				<div class="single-post-title-container">
 						<h1><?php echo $this_posts_title ?></h1>
 				</div>
