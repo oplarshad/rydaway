@@ -120,7 +120,7 @@ add_action( 'widgets_init', 'rydaway_widgets_init' );
 function rydaway_scripts() {
 	
 	// Styles
-	wp_enqueue_style( 'rydaway-style', get_template_directory_uri() . '/css/main.min.css' );
+	wp_enqueue_style( 'rydaway-style', get_template_directory_uri() . '/css/main.css' );
 	wp_enqueue_style( 'rydaway-font-awesome', get_template_directory_uri() . '/css/fontawesome-all.min.css' );
 	wp_enqueue_style( 'rydaway-ryder-logo-font', get_template_directory_uri() . '/css/r-logo-font/styles.css' );
 
