@@ -66,22 +66,28 @@
 			<div class="footer-top-links">
 				<h2>Top Posts</h2>
 					<div class="footer-title-underline"></div>
-				<ul>
-					
-					
+				<ul>	
 				<?php 
-$popularpost = new WP_Query( array( 'posts_per_page' => 5, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
-while ( $popularpost->have_posts() ) : $popularpost->the_post();
- 
- ?> <li>
- 		<a href="<?php echo get_permalink(); ?>"> <?php the_title(); ?> 
-		</a>
-	</li>
-			
-<?php
- 
-endwhile;
-?>
+					// Get Top Posts
+					$args = array(
+						'posts_per_page' => 5,
+						'meta_key' => 'wpb_post_views_count',
+						'orderby' => 'meta_value_num',
+						'order' => 'DESC',
+						'post_status' => 'publish',
+					);
+					$popularpost = new WP_Query( $args );
+					
+					// Start the loop
+					while ( $popularpost->have_posts() ) : $popularpost->the_post();
+ 					?> 
+	 					<li>
+	 						<a href="<?php echo esc_url(get_permalink()); ?>"> <?php the_title(); ?> </a>
+	 					</li>
+ 					<?php
+ 					endwhile;
+ 					wp_reset_query();
+				?>
 				</ul>
 				
 				<!-- Search Bar -->

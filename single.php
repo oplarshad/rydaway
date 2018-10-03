@@ -34,85 +34,78 @@ get_header(); ?>
 	<div class="related-posts">
 	
 	<?php
-// GET RELATED POSTS
-$tags = wp_get_post_tags($post->ID);
-if ($tags) {
-$first_tag = $tags[0]->term_id;
-$args=array(
-'tag__in' => array($first_tag),
-'post__not_in' => array($post->ID),
-'posts_per_page'=>4,
-'caller_get_posts'=>1
-);
-$my_query = new WP_Query($args);
-$count = 0;
-
-
-if( $my_query->have_posts() ) {
-	
-	
-while ($my_query->have_posts()) : $my_query->the_post(); 
-
-$count++;
-
-?>
-
-
-
-
-<?php 
-		    // Retrieve the posts's associated image;
-		    // If the post doesn't have an associated image, return a standard rydaway image
-		    
-		    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium')[0];
-		    if (!$image) {
-			    $image = get_template_directory_uri() . "/img/rydaway_logo_rast.png";
-		    }
-		    
-	    ?>
-
-<a href="<?php the_permalink() ?>" rel="bookmark" title="Link to <?php the_title_attribute();?>">
-	<div class="related-post" style="background-image: url( <?php echo $image; ?> )">
-	<h3 class="related-post-txt"><?php the_title(); ?></h3>
-	</div>
-	</a>
-
- 
-<?php
-endwhile;
-
-	if ($count < 4) {
-		// We don't have enough posts, lets add some of the recent posts.
-		//$recentPosts = wp_get_recent_posts();
-		$howManyLeftToGet = 4 - $count;
+		// GET RELATED POSTS
+		$tags = wp_get_post_tags($post->ID);
+		if ($tags) {
+			$first_tag = $tags[0]->term_id;
+			$args=array(
+				'tag__in' => array($first_tag),
+				'post__not_in' => array($post->ID),
+				'posts_per_page'=>4,
+				'caller_get_posts'=>1,
+				'post_status' => 'publish',
+			);
+			$my_query = new WP_Query($args);
+			$count = 0;
 		
-			$args = array( 'numberposts' => $howManyLeftToGet, 'category' => 0, );
-			$recent_posts = wp_get_recent_posts( $args );
-			
-			foreach( $recent_posts as $recent ){
-				
-				$image = wp_get_attachment_image_src(get_post_thumbnail_id($recent["ID"]), 'large')[0];
-				if (!$image) {
-			    	$image = get_template_directory_uri() . "/img/rydaway_logo_rast.png";
-		    	}
-				
-				
+			if( $my_query->have_posts() ) {
+				while ($my_query->have_posts()) : $my_query->the_post(); 
+					$count++;
+
+				    // Retrieve the posts's associated image;
+				    // If the post doesn't have an associated image, return a standard rydaway image
+				    
+				    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium')[0];
+				    if (!$image) {
+					    $image = get_template_directory_uri() . "/img/rydaway_logo_rast.png";
+				    }
+		    
 				?>
-				<a href="<?php echo get_permalink($recent["ID"]) ?>" rel="bookmark" title="Link to <?php echo $recent["post_title"];?>">
-	<div class="related-post" style="background-image: url( <?php echo $image; ?> )">
-	<h3 class="related-post-txt"><?php echo $recent["post_title"]; ?></h3>
-	</div>
-	</a>
-				 <?php
-			}
+
+					<a href="<?php the_permalink(); ?>" rel="bookmark" title="Link to <?php the_title_attribute(); ?>">
+						<div class="related-post" style="background-image: url( <?php echo esc_url($image); ?> )">
+							<h3 class="related-post-txt"><?php the_title(); ?></h3>
+						</div>
+					</a>
+				<?php
+				endwhile;
+
+				if ($count < 4) {
+					// We don't have enough posts, lets add some of the recent posts.
+					//$recentPosts = wp_get_recent_posts();
+					$howManyLeftToGet = 4 - $count;
+		
+					$args = array(
+						'numberposts' => $howManyLeftToGet,
+						'category' => 0,
+					);
+					$recent_posts = wp_get_recent_posts( $args );
+			
+					foreach( $recent_posts as $recent ){
+						
+						$image = wp_get_attachment_image_src(get_post_thumbnail_id($recent["ID"]), 'large')[0];
+						if (!$image) {
+					    	$image = get_template_directory_uri() . "/img/rydaway_logo_rast.png";
+				    	}
+
+					?>
+						<a
+							href="<?php echo esc_url(get_permalink($recent["ID"])); ?>"
+							rel="bookmark"
+							title="Link to <?php echo esc_attr($recent["post_title"]); ?>"
+						>
+							<div class="related-post" style="background-image: url( <?php echo esc_url($image); ?> )">
+								<h3 class="related-post-txt"><?php echo esc_attr($recent["post_title"]); ?></h3>
+							</div>
+						</a>
+					<?php
+				 	}
 			wp_reset_query();
 		
-		
-		
-	}
+				} // End if $count < 4
 
 
-}
+			} // End if query has posts
 
 else {
 	// We don't have any posts, just grab the latest 10 and select 4 at random to display 

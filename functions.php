@@ -16,41 +16,16 @@ if ( ! function_exists( 'rydaway_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function rydaway_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on rydaway, use a find and replace
-		 * to change 'rydaway' to the name of your theme in all the template files.
-		 */
+
 		load_theme_textdomain( 'rydaway', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
 		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
 		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
+		
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'rydaway' ),
 		) );
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
+		
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
@@ -68,11 +43,6 @@ if ( ! function_exists( 'rydaway_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
 		add_theme_support( 'custom-logo', array(
 			'height'      => 250,
 			'width'       => 250,
@@ -86,10 +56,6 @@ add_action( 'after_setup_theme', 'rydaway_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
  */
 function rydaway_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'rydaway_content_width', 640 );
@@ -98,8 +64,6 @@ add_action( 'after_setup_theme', 'rydaway_content_width', 0 );
 
 /**
  * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function rydaway_widgets_init() {
 	register_sidebar( array(
@@ -201,6 +165,7 @@ function wpb_set_post_views($postID) {
 //To keep the count accurate, lets get rid of prefetching
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
+
 function wpb_track_post_views ($post_id) {
     if ( !is_single() ) return;
     if ( empty ( $post_id) ) {
@@ -218,17 +183,16 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-// Changing that stupid square bracket thing to an elipsis
 
-function new_excerpt_more( $more ) {
+/** Changes square bracket to ellipsis */
+function change_bracket_to_ellipsis( $more ) {
     return ' ...';
 }
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'change_bracket_to_ellipsis');
 
 
-
+// Adds the ability to add a shortcode [rydaway-post id="1234"] whereby an image link will be added to that post
 function rydaway_shortcode_postImageLink( $atts, $content = null ) {
-    // Adds the ability to add a shortcode [rydaway-post id="1234"] whereby an image link will be added to that post
         
     // Set attributes and defaults
     $atts = shortcode_atts(
