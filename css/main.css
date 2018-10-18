@@ -1576,6 +1576,7 @@ object {
 	
 	.archived-post-content-container {
 		width: 100%;
+		float: none;
 	}
 	
 	#masthead {
